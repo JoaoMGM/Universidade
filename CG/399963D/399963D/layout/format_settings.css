@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+    font-family: "DejaVu Sans Mono", monospace;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th {
+    padding: 10px;
+    font-size: 2em;
+    background-color: #950133;
+    color: white;
+}
+
+td {
+    padding: 15px;
+    background-color: #ffffff;
+    width: 50%;
+    text-align: center;
+}
+
+header {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 2.0em;
+    text-align: center;
+}
+
+footer {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: #950133;
+    color: white;
+    text-align: right;
+}

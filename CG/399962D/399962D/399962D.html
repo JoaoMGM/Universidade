@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<link rel='stylesheet' type='text/css' href='layout/format_settings.css' />
+
+		<script>
+			
+
+			function enter(ctx, x, y, sx, sy) {
+				ctx.save();
+				ctx.translate(x,y);
+				ctx.scale(sx,sy);
+			}
+
+			function leave(ctx, fs, ss) {
+				ctx.restore();
+				ctx.lineWidth = 50;
+				ctx.lineCap = "butt";
+				ctx.fillStyle = fs;
+				ctx.strokeStyle = ss;
+				ctx.fill();
+				ctx.stroke();
+			}
+
+			function leaveS(ctx, fs, ss) {
+				ctx.restore();
+				ctx.lineWidth = 42;
+				ctx.lineCap = "round";
+				ctx.fillStyle = fs;
+				ctx.strokeStyle = ss;
+				ctx.fill();
+				ctx.stroke();
+			}
+
+			function letraC(ctx){
+				ctx.beginPath();
+				ctx.arc(0.5,0.5,0.5,0,2*Math.PI);
+			}
+
+			function letraO(ctx){
+				ctx.beginPath();
+				ctx.arc(0.5,0.5,0.5,0,2*Math.PI);
+			}
+
+			function letraS(ctx){
+				ctx.beginPath();
+				ctx.moveTo(1,0);
+				ctx.bezierCurveTo(0.3,-0.5,-0.3,0.5,0.5,0.50);
+				ctx.moveTo(0.5,0.50);
+				ctx.bezierCurveTo(1.30,0.50,0.8,1.50,0,1);
+			}
+
+			function letraI(ctx){
+				ctx.beginPath();
+				ctx.moveTo(0.5,-0.15);
+				ctx.lineTo(0.5,1);
+			}
+
+			function draw (x,y){
+				var canvas = docu
+			}
+
+
+			function main(){
+				var lol=document.getElementById("Saidanak").getContext("2d");
+				lol.save();
+				lol.translate(-525, -300);
+				lol.fillStyle = "white";
+				lol.fillRect(360,223,1560,856);
+				
+
+				
+				enter(lol,750,850,1920/14,1080/8);
+				letraC(lol);
+				leave(lol,"null","#C50A2A");
+				lol.fillStyle = "white";
+				lol.fillRect(850,830,620,835);
+				enter(lol,1240,850,1920/14,1080/8);
+				letraC(lol);
+				leave(lol,"null","#C50A2A");
+				lol.fillStyle = "white";
+				lol.fillRect(1340,830,1360,835);
+				enter(lol,1415,850,1920/14,1080/8);
+				letraO(lol);
+				leave(lol,"null","#C50A2A");
+				enter(lol,1040,860,1920/16,1080/10);
+				letraS(lol);
+				leaveS(lol,"null","#C50A2A");
+				lol.strokeStyle = "white";
+				lol.lineCap = "butt";
+				lol.beginPath();
+				lol.moveTo(1190,820);
+				lol.lineTo(1190,900);
+				lol.stroke();
+				lol.moveTo(1010,920);
+				lol.lineTo(1010,1000);
+				lol.stroke();
+				enter(lol,875,850,1920/14,1080/7);
+				letraI(lol);
+				leave(lol,"null","#C50A2A");
+				lol.strokeStyle = "#0D475D";
+				lol.lineCap = "round";
+			
+		
+				
+				lol.beginPath();
+				lol.moveTo(885,700);
+				lol.lineTo(885,425);
+				lol.stroke();
+				lol.moveTo(1415,700);
+				lol.lineTo(1415,425);
+				lol.stroke();
+				lol.moveTo(750,640);
+				lol.lineTo(750,515);
+				lol.stroke();
+				lol.moveTo(615,640);
+				lol.lineTo(615,585);
+				lol.stroke();
+				lol.moveTo(1020,640);
+				lol.lineTo(1020,515);
+				lol.stroke();
+				lol.moveTo(1280,640);
+				lol.lineTo(1280,515);
+				lol.stroke();
+				lol.moveTo(1150,640);
+				lol.lineTo(1150,585);
+				lol.stroke();
+				lol.moveTo(1550,640);
+				lol.lineTo(1550,515);
+				lol.stroke();
+				lol.moveTo(1685,640);
+				lol.lineTo(1685,585);
+				lol.stroke();
+
+
+
+			}
+
+		</script>
+		<title></title>
+	</head>
+	<body onload="main();">
+		<header>Trabalho 2D</header>
+        <table>
+            <tr>
+                <th> Original </th>
+                <th> Reprodução</th>
+            </tr>
+            <tr>
+            <td><img src = "media/Origin.png" style="max-width: 100%"></img></td>
+            <td>
+                 <canvas id="Saidanak" width="1200" height="800" style = "max-width= 100%"/>   
+            </td>
+			</tr>
+			<p align = "middle" style="font-family:arial"; "fonte-size: 10px;">(Para ficar bem formatado dê zoom out)</p>
+			</table>
+			<footer>
+			João Marques &#9674; Aluno Nº39996
+			</footer>
+	</body>
+</html>

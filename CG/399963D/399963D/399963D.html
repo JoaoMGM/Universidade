@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <script type = 'text/javascript' src = 'lib/x3dom/x3dom-full.js'>
+        </script>
+        <link rel="stylesheet" href="../style/style.css" type="text/css">
+        <link rel='stylesheet' type='text/css' href='layout/format_settings.css' />
+    </head>
+    <body>
+        <header>Trabalho 3D</header>
+        <table>
+            <tr>
+                <th> Original </th>
+                <th> Reprodução</th>
+            </tr>
+            <tr>
+            <td><img src = "media/Original.jpg" style="max-width: 100%"></img></td>
+            <td>
+                    <X3D width="900px" height="750px">
+            <scene>
+                <switch whichChoice = "-1">
+					<CommonSurfaceShader DEF="Madeira">
+						<ImageTexture containerField="diffuseTexture" url="media/texture2.jpg">
+						</ImageTexture>
+					</CommonSurfaceShader>
+
+					<CommonSurfaceShader DEF="Vase">
+						<ImageTexture containerField="diffuseTexture" url="media/text.jpg">
+						</ImageTexture>
+					</CommonSurfaceShader>
+
+					<CommonSurfaceShader DEF="picture">
+						<ImageTexture containerField="diffuseTexture" url="media/picture.jpg">
+						</ImageTexture>
+					</CommonSurfaceShader>
+
+					<extrusion id = "holedbox"
+                          convex="false"
+                          crossSection="
+                          1.0 -1.0
+						  1.0 1.0
+						  -1.0 1.0
+						  -1.0 -1.0
+						  1.0 -1.0
+							"
+                          spine="
+						  0.0 2.0 0.0
+						  0.0 0.0 0.0"
+                          scale="
+						  1 1 1
+                          1 1 1">
+                      </extrusion>
+					  <Extrusion id="vaso" 
+						creaseAngle='1.57' 
+						crossSection='1.00 0.00
+						  0.92 -0.38
+						  0.71 -0.71
+						  0.38 -0.92
+						  0.00 -1.00
+						  -0.38 -0.92
+						  -0.71 -0.71
+						  -0.92 -0.38
+						  -1.00 -0.00
+						  -0.92 0.38
+						  -0.71 0.71
+						  -0.38 0.92
+						  0.00 1.00
+						  0.38 0.92
+						  0.71 0.71
+						  0.92 0.38
+						  1.00 0.00' 
+						  endCap='false' 
+						  scale='
+						  0.9 0.9
+						  0.97 0.97
+						  1.0 1.0
+						  0.97 0.97
+						  0.9 0.9
+						  0.75 0.75
+						  0.6 0.6
+						  0.52 0.52
+						  0.5 0.5
+						  0.57 0.57
+						  0.57 0.57' 
+						  solid='false' 
+						  spine='0.0 0.0 0.0
+						  0.0 0.4 0.0
+						  0.0 0.8 0.0
+						  0.0 1.2 0.0
+						  0.0 1.6 0.0
+						  0.0 2.0 0.0
+						  0.0 2.4 0.0
+						  0.0 2.8 0.0
+						  0.0 3.2 0.0
+						  0.0 3.6 0.0
+						  0.0 4.0 0.0'/>
+					  <indexedfaceset id="capa" coordIndex="
+					  0 1 3 2 0 -1
+					  4 5 7 6 4 -1
+					  1 5 7 3 1 -1					          
+					   ">
+						<coordinate point="
+						0.9 0.2 -1.0
+						0.9 0.2 1.0
+						0.1 -0.9 -1.0
+						0.1 -0.9 1.0
+						0.7 0.3 -1.0
+						0.7 0.3 1.0
+						-0.1 -0.8 -1.0
+						-0.1 -0.8 1.0">								
+						</coordinate>
+
+						<indexedfaceset id= "folha" coordIndex="
+						0 1 3 2 0 -1
+						0 6 4 2 0 -1
+						4 6 7 5 4 -1
+							">
+						<coordinate point="
+						0.86 0.15 -0.95
+						0.86 0.15 1
+						0.67 0.25 -0.95
+						0.67 0.25 1
+						-0.06 -0.75 -0.95
+						-0.06 -0.75 1
+						0.13 -0.85 -0.95
+						0.13 -0.85 1
+						">
+						</coordinate>
+						</indexedfaceset>
+
+					<indexedfaceset id="backstand" 
+					coordIndex="
+					0 1 3 2 0 -1
+					">
+                    <coordinate point=" 
+					 0.6 0.6 0
+					 -0.6 0.6 0
+					 0.6 -0.9 0.5
+					 -0.6 -0.9 0.5
+					">
+					</coordinate>
+					</indexedfaceset>
+
+					<indexedfaceset id="overstand" coordIndex="
+					  0 8 9 1 0 -1
+					  0 8 10 2 0 -1
+					  2 10 11 3 2 -1
+					  1 9 11 3 1 -1
+					  8 9 13 12 8 -1
+					  8 12 14 10 8 -1
+					  10 14 15 11 10 -1
+					  11 15 13 9 11 -1
+					  4 12 13 5 4 -1
+					  4 12 14 6 4 -1
+					  15 7 5 13 15 -1
+					  15 7 6 14 15 -1
+					   ">
+                    <coordinate point=" 
+					 0.6 0.6 0
+					 -0.6 0.6 0
+					 0.6 -0.9 0.5
+					 -0.6 -0.9 0.5
+					 0.5 0.5 0.03
+					 -0.5 0.5 0.03
+					 0.5 -0.8 0.5
+					 -0.5 -0.8 0.5
+					 0.6 0.6 0.1
+					 -0.6 0.6 0.1
+					 0.6 -0.9 0.6
+					 -0.6 -0.9 0.6
+					 0.5 0.5 0.1
+					 -0.5 0.5 0.1
+					 0.5 -0.8 0.6
+					 -0.5 -0.8 0.6					 
+					">							
+					</coordinate>
+				</indexedfaceset>
+
+				<indexedfaceset id="pic" 
+					coordIndex="
+					0 1 3 2 1 -1
+					">
+					<coordinate point="
+					0.5 0.5 0.035
+					-0.5 0.5 0.035
+					0.5 -0.8 0.51
+					-0.5 -0.8 0.51
+					">
+					</coordinate>
+					</indexedfaceset>
+        </switch>
+		<transform scale="0.80 0.80 0.80">
+        <transform id = "shelf" translation ="0 1 0">
+			<transform rotation = "1 0 0 0.2">
+
+				<transform id="middle" rotation = "0 1 0 -0.720">
+
+					<transform scale=" 1 0.05 1">
+						<shape>
+							<appearance>
+								<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+							</appearance>
+								<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+						</shape>
+					</transform>
+
+					<transform translation ="0 -2 0" scale=" 1 0.05 1">
+						<shape>
+							<appearance>
+								<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+							</appearance>
+								<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+						</shape>
+					</transform>
+
+					<transform translation ="1 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+						<shape>
+							<appearance>
+								<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+							</appearance>
+								<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+						</shape>
+					</transform>
+
+					<transform translation ="-0.9 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+						<shape>
+							<appearance>
+								<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+							</appearance>
+								<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+						</shape>
+					</transform>
+
+					<transform translation ="0 -1.85 0" scale=" 0.4 0.4 0.4">
+						<shape>
+							<appearance>
+								<X3DAppearanceChildNode use="Vase"></X3DAppearanceChildNode>
+							</appearance>
+								<x3dgeometrynode use = "vaso"></x3dgeometrynode>
+						</shape>
+					</transform>
+				
+				</transform>
+
+				<transform id = "lower" translation="0 -2.1 0">
+					<transform rotation = "0 1 0 -0.2">
+						<transform scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="0 -2 0" scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="1 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="-0.9 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="0 -2.1 0" scale=" 0.9 0.05 0.9">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform id="pict">
+							<transform translation="0 -1 0">
+								<shape>
+									<appearance>
+										<twosidedmaterial diffuseColor="#996B42"></twosidedmaterial>
+									</appearance>
+										<x3dgeometrynode use = "backstand"></x3dgeometrynode>
+								</shape>
+							</transform>
+
+							<transform translation="0 -0.99 0">
+								<shape>
+									<appearance>
+										<twosidedmaterial diffuseColor="#4B342C"></twosidedmaterial>
+									</appearance>
+										<x3dgeometrynode use = "overstand"></x3dgeometrynode>
+								</shape>
+							</transform>
+
+						<transform translation="0 -0.99 0">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="picture"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "pic"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform id="holder" scale="0.1 0.6 0.04" translation="0 -1.5 -0.02" rotation="1 0 0 0.3">
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor="#996B42"></twosidedmaterial>
+								</appearance>
+									<box></box>
+							</shape>
+						</transform>
+
+					</transform>
+				</transform>
+				</transform>
+				<transform id = "upper" translation="0 2.1 0">
+					<transform rotation = "0 1 0 -0.1">
+
+						<transform scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="0 -2 0" scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="1 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+
+						<transform translation ="-0.9 -1 0" rotation="0 0 1 1.57 " scale=" 1 0.05 1">
+							<shape>
+								<appearance>
+									<X3DAppearanceChildNode use="Madeira"></X3DAppearanceChildNode>
+								</appearance>
+									<x3dgeometrynode use = "holedbox"></x3dgeometrynode>
+							</shape>
+						</transform>
+					
+					<transform id = "livros">
+						<transform translation = "0 -1 0" scale = "1 1 1">
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor = "crimson"></twosidedmaterial>
+								</appearance>
+									<x3dgeometrynode use = "capa"></x3dgeometrynode>
+							</shape>
+								<shape>
+									<appearance>
+										<twosidedmaterial diffuseColor = "white"></twosidedmaterial>
+									</appearance>
+										<x3dgeometrynode use = "folha"></x3dgeometrynode>
+								</shape>
+						</transform>
+						<transform translation = "-0.28 -1 0" scale = "1 1 1">
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor = "darkseagreen"></twosidedmaterial>
+								</appearance>
+									<x3dgeometrynode use = "capa"></x3dgeometrynode>
+							</shape>
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor = "white"></twosidedmaterial>
+								</appearance>
+									<x3dgeometrynode use = "folha"></x3dgeometrynode>
+							</shape>
+						</transform>
+						<transform translation = "-0.56 -1 0" scale = "1 1 1">
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor = "blue"></twosidedmaterial>
+								</appearance>
+									<x3dgeometrynode use = "capa"></x3dgeometrynode>
+							</shape>
+							<shape>
+								<appearance>
+									<twosidedmaterial diffuseColor = "white"></twosidedmaterial>
+								</appearance>
+									<x3dgeometrynode use = "folha"></x3dgeometrynode>
+							</shape>
+						</transform>
+					</transform>
+				</transform>
+			</transform>
+		</transform>
+		</transform>
+	<TimeSensor DEF = "tictoc" cycleInterval="10" loop="true">
+        </TimeSensor>
+			<OrientationInterpolator DEF = "cuberotation" key="0.00 0.25 0.50 0.75 1.00" keyValue="
+				0 1 0 0.00
+				0 1 0 1.57
+				0 1 0 3.14
+				0 1 0 4.71
+				0 1 0 6.28">
+			</OrientationInterpolator>
+			<Route fromNode="tictoc" fromField="fraction_changed" toNode="cuberotation" toField="set_fraction">
+			</Route>
+			<Route fromNode="cuberotation" fromField="value_changed" toNode="upper" toField="rotation">
+			</Route>
+			<Route fromNode="cuberotation" fromField="value_changed" toNode="lower" toField="rotation">
+			</Route>
+			<TimeSensor DEF = "tictoc" cycleInterval="10" loop="true">
+			</TimeSensor>
+			<OrientationInterpolator DEF = "cuberotationrev" key="0.00 0.25 0.50 0.75 1.00" keyValue="
+				0 1 0 0.00
+				0 1 0 -1.57
+				0 1 0 -3.14
+				0 1 0 -4.71
+				0 1 0 -6.28">
+			</OrientationInterpolator>
+			<Route fromNode="tictoc" fromField="fraction_changed" toNode="cuberotationrev" toField="set_fraction">
+			</Route>
+			<Route fromNode="cuberotationrev" fromField="value_changed" toNode="middle" toField="rotation">
+			</Route>
+            </scene>
+        </X3D>
+            </td>
+			</table>
+			<footer>
+			João Marques &#9674; Aluno Nº39996
+			</footer>
+    </body>
+</html>
